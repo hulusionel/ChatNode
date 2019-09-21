@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 module.exports = () => {
-	mongoose.connect(process.env.DB_STRING);
+	mongoose.connect(process.env.DB_STRING,{ useUnifiedTopology: true });
 
 	mongoose.connection.on('open', () => {
 		 console.log('MongoDB: Connected');

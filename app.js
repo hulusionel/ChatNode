@@ -5,8 +5,10 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const dotenv=require('dotenv');
 dotenv.config();
+const passport=require('passport');
+
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
+const authRouter = require('./routes/auth');
 
 const app = express();
 
@@ -23,8 +25,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'bower_components')));
 
+app.use(passport.initialize());
+
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/auth', authRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
