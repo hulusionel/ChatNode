@@ -1,0 +1,16 @@
+{
+  "name": "chatnode",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Hulusi <37039143+hulusionel@users.noreply.github.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "chatnode"
+  ],
+  "homepage": "https://github.com/hulusionel/ChatNode",
+  "dependencies": {
+    "angular": "^1.7.8"
+  }
+}
