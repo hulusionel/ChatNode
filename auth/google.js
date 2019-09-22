@@ -15,12 +15,13 @@ passport.use(
         console.log(data);
 
 		User.findOrCreate({
-			'googleId': data.id
+			'googleId': data.sub
 		}, {
-			name: data.name.givenName,
-			surname: data.name.familyName,
+			name: data.given_name,
+			surname: data.family_name,
 			profilePhotoUrl: data.picture,
 		}, (err, user) => {
+			console.log(user);
 			return done(err, user);
 		})
 	})
